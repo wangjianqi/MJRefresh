@@ -10,7 +10,7 @@
 #import "MJTempViewController.h"
 
 @implementation MJExampleWindow
-
+//静态变量
 static UIWindow *window_;
 + (void)show
 {

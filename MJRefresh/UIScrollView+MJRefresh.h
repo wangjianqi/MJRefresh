@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nullable) MJRefreshFooter *footer MJRefreshDeprecated("使用mj_footer");
 
 #pragma mark - other
+//计算总共个数
 - (NSInteger)mj_totalDataCount;
 
 @end

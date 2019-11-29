@@ -30,6 +30,7 @@
     [navBar setBackgroundImage:[UIImage imageNamed:navBarBg] forBarMetrics:UIBarMetricsDefault];
     
     // 3.标题
+    //预编译使用：使用高版本编译运行在低版本iOS上，如果没有这个属性，可能会crash，加载预编译判断
 #ifdef __IPHONE_7_0
     [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
 #else

@@ -37,7 +37,7 @@ static id instance_;
 #pragma mark - 初始化
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    //修改状态栏
     self.statusBarStyle = UIStatusBarStyleLightContent;
     
     self.view.backgroundColor = [UIColor clearColor];
@@ -53,7 +53,9 @@ static id instance_;
 
 - (void)contorlSelect:(UISegmentedControl *)control
 {
+    //获取keyWindow
     UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+    //设置rootViewController
     keyWindow.rootViewController = [keyWindow.rootViewController.storyboard instantiateViewControllerWithIdentifier:[NSString stringWithFormat:@"%zd", control.selectedSegmentIndex]];
     
     if (control.selectedSegmentIndex == 0) {
@@ -87,7 +89,7 @@ static id instance_;
 - (void)setStatusBarStyle:(UIStatusBarStyle)statusBarStyle
 {
     _statusBarStyle = statusBarStyle;
-    
+    //更新状态栏
     [self setNeedsStatusBarAppearanceUpdate];
 }
 

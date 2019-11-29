@@ -37,6 +37,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    NSLog(@"%s",__func__);
+    //在App生命周期内只执行一次
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [MJExampleWindow show];

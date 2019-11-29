@@ -22,7 +22,7 @@
 - (void)deallocSwizzle
 {
     NSLog(@"%@被销毁了", self);
-    
+    //dealloc
     [self deallocSwizzle];
 }
 

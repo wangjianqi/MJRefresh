@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (Example)
+//添加关联属性
 @property (copy, nonatomic) NSString *method;
 @end

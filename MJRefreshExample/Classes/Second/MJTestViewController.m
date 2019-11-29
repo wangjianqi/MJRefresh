@@ -26,6 +26,7 @@
 
 - (void)close
 {
+    //如果弹出来
     if (self.presentingViewController) {
         [self dismissViewControllerAnimated:YES completion:nil];
     } else {

@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     self.count = 0;
-    
+    //弱引用
     __unsafe_unretained typeof(self) weakSelf = self;
     __unsafe_unretained UITableView *tableView = self.tableView;
     
@@ -40,6 +40,7 @@
             [tableView.mj_footer endRefreshing];
         });
     }];
+    //隐藏
     footer.hidden = YES;
     tableView.mj_footer = footer;
 }
@@ -56,6 +57,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:ID];
     }
+    //如果存在导航控制器
     if (indexPath.row % 2 && self.navigationController) {
         cell.textLabel.text = @"push";
     } else {
@@ -68,6 +70,7 @@
 {
     MJTestViewController *test = [[MJTestViewController alloc] init];
     if (indexPath.row % 2 && self.navigationController) {
+        //
         test.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:test animated:YES];
     } else {
