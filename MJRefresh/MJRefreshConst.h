@@ -13,11 +13,12 @@
 #define MJRefreshLog(...)
 #endif
 
-// 过期提醒
+// 过期提醒:方法废弃提示
 #define MJRefreshDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
 // 运行时objc_msgSend
 #define MJRefreshMsgSend(...) ((void (*)(void *, SEL, UIView *))objc_msgSend)(__VA_ARGS__)
+//target
 #define MJRefreshMsgTarget(target) (__bridge void *)(target)
 
 // RGB颜色
@@ -67,6 +68,7 @@ if (state == oldState) return; \
 [super setState:state];
 
 // 异步主线程执行，不强持有Self
+//主线程
 #define MJRefreshDispatchAsyncOnMainQueue(x) \
 __weak typeof(self) weakSelf = self; \
 dispatch_async(dispatch_get_main_queue(), ^{ \

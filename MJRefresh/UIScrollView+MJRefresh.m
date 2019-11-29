@@ -15,6 +15,7 @@
 @implementation UIScrollView (MJRefresh)
 
 #pragma mark - header
+//字符
 static const char MJRefreshHeaderKey = '\0';
 //set方法
 - (void)setMj_header:(MJRefreshHeader *)mj_header

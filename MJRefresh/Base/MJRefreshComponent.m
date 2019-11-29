@@ -91,6 +91,7 @@
     NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
     [self.scrollView addObserver:self forKeyPath:MJRefreshKeyPathContentOffset options:options context:nil];
     [self.scrollView addObserver:self forKeyPath:MJRefreshKeyPathContentSize options:options context:nil];
+    //scrollView的拖动手势
     self.pan = self.scrollView.panGestureRecognizer;
     [self.pan addObserver:self forKeyPath:MJRefreshKeyPathPanState options:options context:nil];
 }
@@ -128,6 +129,7 @@
 
 #pragma mark - 公共方法
 #pragma mark 设置回调对象和回调方法
+//设置刷新回调
 - (void)setRefreshingTarget:(id)target refreshingAction:(SEL)action
 {
     self.refreshingTarget = target;
@@ -139,6 +141,7 @@
     _state = state;
     
     // 加入主队列的目的是等setState:方法调用完毕、设置完文字后再去布局子控件
+    // 修改状态就是重新布局
     MJRefreshDispatchAsyncOnMainQueue([self setNeedsLayout];)
 }
 
@@ -152,6 +155,7 @@
     self.pullingPercent = 1.0;
     // 只要正在刷新，就完全显示
     if (self.window) {
+        //正在刷新中
         self.state = MJRefreshStateRefreshing;
     } else {
         // 预防正在刷新中时，调用本方法使得header inset回置失败
@@ -176,7 +180,7 @@
 {
     MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateIdle;)
 }
-
+//结束刷新：待回调
 - (void)endRefreshingWithCompletionBlock:(void (^)(void))completionBlock
 {
     self.endRefreshingCompletionBlock = completionBlock;
@@ -200,7 +204,7 @@
 {
     return self.isAutomaticallyChangeAlpha;
 }
-//自动切换透明度
+//自动切换透明度:刷新控件是否自动切换透明度
 - (void)setAutomaticallyChangeAlpha:(BOOL)automaticallyChangeAlpha
 {
     _automaticallyChangeAlpha = automaticallyChangeAlpha;
@@ -255,7 +259,7 @@
     label.backgroundColor = [UIColor clearColor];
     return label;
 }
-
+//计算Text的宽度
 - (CGFloat)mj_textWidth {
     CGFloat stringWidth = 0;
     CGSize size = CGSizeMake(MAXFLOAT, MAXFLOAT);

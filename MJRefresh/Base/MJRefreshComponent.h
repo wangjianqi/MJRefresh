@@ -14,6 +14,7 @@
 #import "UIScrollView+MJRefresh.h"
 #import "NSBundle+MJRefresh.h"
 
+//在这两个宏之间的代码，所有简单指针对象都被假定为nonnull，因此我们只需要去指定那些nullable的指针
 NS_ASSUME_NONNULL_BEGIN
 
 /** 刷新控件的状态 */
@@ -39,6 +40,7 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)(void);
 
 /** 刷新控件的基类 */
 @interface MJRefreshComponent : UIView
+//成员变量
 {
     /** 记录scrollView刚开始的inset */
     UIEdgeInsets _scrollViewOriginalInset;

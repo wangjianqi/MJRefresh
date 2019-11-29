@@ -3,7 +3,7 @@
 #import <UIKit/UIKit.h>
 
 const CGFloat MJRefreshLabelLeftInset = 25;
-//高度
+//默认高度
 const CGFloat MJRefreshHeaderHeight = 54.0;
 const CGFloat MJRefreshFooterHeight = 44.0;
 //动画时间

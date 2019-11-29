@@ -25,7 +25,7 @@ static BOOL respondsToAdjustedContentInset_;
         respondsToAdjustedContentInset_ = [self instancesRespondToSelector:@selector(adjustedContentInset)];
     });
 }
-
+//内容边距
 - (UIEdgeInsets)mj_inset
 {
 #ifdef __IPHONE_11_0

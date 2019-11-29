@@ -9,7 +9,7 @@
 #import "MJRefreshStateHeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+//常规的
 @interface MJRefreshNormalHeader : MJRefreshStateHeader
 //箭头
 @property (weak, nonatomic, readonly) UIImageView *arrowView;
