@@ -9,9 +9,11 @@
 #import "MJRefreshBackStateFooter.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+//Back
 @interface MJRefreshBackNormalFooter : MJRefreshBackStateFooter
+//箭头
 @property (weak, nonatomic, readonly) UIImageView *arrowView;
+//菊花
 @property (weak, nonatomic, readonly) UIActivityIndicatorView *loadingView;
 
 /** 菊花的样式 */

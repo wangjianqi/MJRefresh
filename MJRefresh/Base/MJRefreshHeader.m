@@ -15,6 +15,7 @@
 
 @implementation MJRefreshHeader
 #pragma mark - 构造方法
+//刷新回调
 + (instancetype)headerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock
 {
     MJRefreshHeader *cmp = [[self alloc] init];
@@ -65,7 +66,7 @@
     }
 }
 
-
+//偏移
 - (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
 {
     [super scrollViewContentOffsetDidChange:change];
@@ -90,6 +91,7 @@
     
     // 普通 和 即将刷新 的临界点
     CGFloat normal2pullingOffsetY = happenOffsetY - self.mj_h;
+    //计算拉取百分比
     CGFloat pullingPercent = (happenOffsetY - offsetY) / self.mj_h;
     
     if (self.scrollView.isDragging) { // 如果正在拖拽
@@ -157,6 +159,7 @@
 }
 
 #pragma mark - 公共方法
+//上次刷新的时间
 - (NSDate *)lastUpdatedTime
 {
     return [[NSUserDefaults standardUserDefaults] objectForKey:self.lastUpdatedTimeKey];

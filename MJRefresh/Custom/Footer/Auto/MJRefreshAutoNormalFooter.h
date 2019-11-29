@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MJRefreshAutoNormalFooter : MJRefreshAutoStateFooter
+//加载中
 @property (weak, nonatomic, readonly) UIActivityIndicatorView *loadingView;
 
 /** 菊花的样式 */

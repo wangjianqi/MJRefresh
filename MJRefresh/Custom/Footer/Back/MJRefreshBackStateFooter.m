@@ -26,7 +26,7 @@
     }
     return _stateTitles;
 }
-
+//状态
 - (UILabel *)stateLabel
 {
     if (!_stateLabel) {

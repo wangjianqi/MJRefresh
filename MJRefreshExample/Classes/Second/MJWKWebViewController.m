@@ -37,6 +37,7 @@
 }
 
 #pragma mark - webViewDelegate
+//加载完毕结束刷新
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     [self.webView.scrollView.mj_header endRefreshing];
 }

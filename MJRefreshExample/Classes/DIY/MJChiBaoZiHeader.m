@@ -11,6 +11,7 @@
 @implementation MJChiBaoZiHeader
 #pragma mark - 重写方法
 #pragma mark 基本设置
+//动画
 - (void)prepare
 {
     [super prepare];

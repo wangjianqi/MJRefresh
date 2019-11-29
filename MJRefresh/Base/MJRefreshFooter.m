@@ -42,6 +42,7 @@
 }
 
 #pragma mark - 公共方法
+//没有更多数据
 - (void)endRefreshingWithNoMoreData
 {
     MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateNoMoreData;)
@@ -51,7 +52,7 @@
 {
     [self endRefreshingWithNoMoreData];
 }
-
+//重置没有更多数据
 - (void)resetNoMoreData
 {
     MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateIdle;)

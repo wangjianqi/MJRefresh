@@ -22,6 +22,7 @@
 {
     if (!_arrowView) {
         UIImageView *arrowView = [[UIImageView alloc] initWithImage:[NSBundle mj_arrowImage]];
+        //添加子视图
         [self addSubview:_arrowView = arrowView];
     }
     return _arrowView;

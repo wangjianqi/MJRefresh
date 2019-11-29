@@ -34,7 +34,7 @@
 {
     return [self mj_localizedStringForKey:key value:nil];
 }
-
+//本地话
 + (NSString *)mj_localizedStringForKey:(NSString *)key value:(NSString *)value
 {
     static NSBundle *bundle = nil;

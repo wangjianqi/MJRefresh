@@ -50,6 +50,7 @@
 }
 
 #pragma mark - 私有方法
+//点击加载更多
 - (void)stateLabelClick
 {
     if (self.state == MJRefreshStateIdle) {

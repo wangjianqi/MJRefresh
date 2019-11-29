@@ -106,7 +106,7 @@ static NSString *const MJCollectionViewCellIdentifier = @"color";
 #pragma mark - collection数据源代理
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    // 设置尾部控件的显示和隐藏
+    // 设置尾部控件的显示和隐藏：没有数据的时候就隐藏
     self.collectionView.mj_footer.hidden = self.colors.count == 0;
     return self.colors.count;
 }

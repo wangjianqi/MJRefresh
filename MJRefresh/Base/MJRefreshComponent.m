@@ -44,6 +44,7 @@
 
 - (void)placeSubviews{}
 
+//添加到父View
 - (void)willMoveToSuperview:(UIView *)newSuperview
 {
     [super willMoveToSuperview:newSuperview];
@@ -86,6 +87,7 @@
 #pragma mark - KVO监听
 - (void)addObservers
 {
+    //监听新值和旧值
     NSKeyValueObservingOptions options = NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld;
     [self.scrollView addObserver:self forKeyPath:MJRefreshKeyPathContentOffset options:options context:nil];
     [self.scrollView addObserver:self forKeyPath:MJRefreshKeyPathContentSize options:options context:nil];
@@ -141,6 +143,7 @@
 }
 
 #pragma mark 进入刷新状态
+//开始刷新
 - (void)beginRefreshing
 {
     [UIView animateWithDuration:MJRefreshFastAnimationDuration animations:^{
@@ -168,6 +171,7 @@
 }
 
 #pragma mark 结束刷新状态
+//结束刷新
 - (void)endRefreshing
 {
     MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateIdle;)
@@ -196,7 +200,7 @@
 {
     return self.isAutomaticallyChangeAlpha;
 }
-
+//自动切换透明度
 - (void)setAutomaticallyChangeAlpha:(BOOL)automaticallyChangeAlpha
 {
     _automaticallyChangeAlpha = automaticallyChangeAlpha;
@@ -225,6 +229,7 @@
 #pragma mark - 内部方法
 - (void)executeRefreshingCallback
 {
+    //主线程
     MJRefreshDispatchAsyncOnMainQueue({
         if (self.refreshingBlock) {
             self.refreshingBlock();

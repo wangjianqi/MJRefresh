@@ -80,7 +80,7 @@ static id instance_;
 - (void)setStatusBarHidden:(BOOL)statusBarHidden
 {
     _statusBarHidden = statusBarHidden;
-    
+    //更新状态栏
     [self setNeedsStatusBarAppearanceUpdate];
 }
 

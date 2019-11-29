@@ -16,11 +16,13 @@
 
 #pragma mark - header
 static const char MJRefreshHeaderKey = '\0';
+//set方法
 - (void)setMj_header:(MJRefreshHeader *)mj_header
 {
     if (mj_header != self.mj_header) {
         // 删除旧的，添加新的
         [self.mj_header removeFromSuperview];
+        // 插入到第一个
         [self insertSubview:mj_header atIndex:0];
         
         // 存储新的
@@ -28,7 +30,7 @@ static const char MJRefreshHeaderKey = '\0';
                                  mj_header, OBJC_ASSOCIATION_RETAIN);
     }
 }
-
+//get方法
 - (MJRefreshHeader *)mj_header
 {
     return objc_getAssociatedObject(self, &MJRefreshHeaderKey);

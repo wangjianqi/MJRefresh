@@ -3,16 +3,20 @@
 #import <UIKit/UIKit.h>
 
 const CGFloat MJRefreshLabelLeftInset = 25;
+//高度
 const CGFloat MJRefreshHeaderHeight = 54.0;
 const CGFloat MJRefreshFooterHeight = 44.0;
+//动画时间
 const CGFloat MJRefreshFastAnimationDuration = 0.25;
 const CGFloat MJRefreshSlowAnimationDuration = 0.4;
-
+//偏移
 NSString *const MJRefreshKeyPathContentOffset = @"contentOffset";
 NSString *const MJRefreshKeyPathContentInset = @"contentInset";
+//内容尺寸
 NSString *const MJRefreshKeyPathContentSize = @"contentSize";
+//手势
 NSString *const MJRefreshKeyPathPanState = @"state";
-
+//上次刷新时间Key
 NSString *const MJRefreshHeaderLastUpdatedTimeKey = @"MJRefreshHeaderLastUpdatedTimeKey";
 
 NSString *const MJRefreshHeaderIdleText = @"MJRefreshHeaderIdleText";
@@ -27,7 +31,7 @@ NSString *const MJRefreshBackFooterIdleText = @"MJRefreshBackFooterIdleText";
 NSString *const MJRefreshBackFooterPullingText = @"MJRefreshBackFooterPullingText";
 NSString *const MJRefreshBackFooterRefreshingText = @"MJRefreshBackFooterRefreshingText";
 NSString *const MJRefreshBackFooterNoMoreDataText = @"MJRefreshBackFooterNoMoreDataText";
-
+//最后更新
 NSString *const MJRefreshHeaderLastTimeText = @"MJRefreshHeaderLastTimeText";
 NSString *const MJRefreshHeaderDateTodayText = @"MJRefreshHeaderDateTodayText";
 NSString *const MJRefreshHeaderNoneLastDateText = @"MJRefreshHeaderNoneLastDateText";

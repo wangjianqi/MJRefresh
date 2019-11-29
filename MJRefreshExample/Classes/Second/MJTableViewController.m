@@ -64,7 +64,7 @@ static const CGFloat MJDuration = 2.0;
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
-    // 设置自动切换透明度(在导航栏下面自动隐藏)
+    // 设置自动切换透明度(在导航栏下面自动隐藏)：在导航栏下自动隐藏
     header.automaticallyChangeAlpha = YES;
     
     // 隐藏时间
@@ -77,7 +77,7 @@ static const CGFloat MJDuration = 2.0;
     self.tableView.mj_header = header;
 }
 
-#pragma mark UITableView + 下拉刷新 隐藏状态和时间
+#pragma mark UITableView + 下拉刷新 隐藏状态和时间：只有图片
 - (void)example04
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
@@ -102,7 +102,7 @@ static const CGFloat MJDuration = 2.0;
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     
-    // 设置文字
+    // 设置文字：不同状态显示的文本
     [header setTitle:@"Pull down to refresh" forState:MJRefreshStateIdle];
     [header setTitle:@"Release to refresh" forState:MJRefreshStatePulling];
     [header setTitle:@"Loading ..." forState:MJRefreshStateRefreshing];
@@ -126,6 +126,7 @@ static const CGFloat MJDuration = 2.0;
 - (void)example06
 {
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadNewData方法）
+    //自定义刷新
     self.tableView.mj_header = [MJDIYHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     [self.tableView.mj_header beginRefreshing];
 }
@@ -185,7 +186,9 @@ static const CGFloat MJDuration = 2.0;
 
 - (void)reset
 {
+    //加载更多
     [self.tableView.mj_footer setRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+    //重置没有更多数据
     [self.tableView.mj_footer resetNoMoreData];
 }
 
@@ -284,6 +287,7 @@ static const CGFloat MJDuration = 2.0;
 {
     // 1.添加假数据
     for (int i = 0; i<5; i++) {
+        //插入在前面
         [self.data insertObject:MJRandomData atIndex:0];
     }
     
@@ -332,6 +336,7 @@ static const CGFloat MJDuration = 2.0;
         [tableView reloadData];
         
         // 拿到当前的上拉刷新控件，变为没有更多数据的状态
+        //没有更多数据
         [tableView.mj_footer endRefreshingWithNoMoreData];
     });
 }
@@ -351,6 +356,7 @@ static const CGFloat MJDuration = 2.0;
         [tableView reloadData];
         
         // 隐藏当前的上拉刷新控件
+        // 隐藏之后也无法上拉加载了
         tableView.mj_footer.hidden = YES;
     });
 }

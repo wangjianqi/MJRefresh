@@ -36,7 +36,7 @@
     }
     return _stateLabel;
 }
-
+//显示上次刷新的时间
 - (UILabel *)lastUpdatedTimeLabel
 {
     if (!_lastUpdatedTimeLabel) {
@@ -72,6 +72,7 @@
     if (lastUpdatedTime) {
         // 1.获得年月日
         NSCalendar *calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+        //单位
         NSUInteger unitFlags = NSCalendarUnitYear| NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute;
         NSDateComponents *cmp1 = [calendar components:unitFlags fromDate:lastUpdatedTime];
         NSDateComponents *cmp2 = [calendar components:unitFlags fromDate:[NSDate date]];
@@ -79,14 +80,17 @@
         // 2.格式化日期
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         BOOL isToday = NO;
+        //是否是今天
         if ([cmp1 day] == [cmp2 day]) { // 今天
             formatter.dateFormat = @" HH:mm";
             isToday = YES;
         } else if ([cmp1 year] == [cmp2 year]) { // 今年
+            //是否是同一年
             formatter.dateFormat = @"MM-dd HH:mm";
         } else {
             formatter.dateFormat = @"yyyy-MM-dd HH:mm";
         }
+        //具体更新时间
         NSString *time = [formatter stringFromDate:lastUpdatedTime];
         
         // 3.显示日期

@@ -59,7 +59,7 @@
         self.mj_h = image.size.height; 
     } 
 }
-
+//设置动画图片
 - (void)setImages:(NSArray *)images forState:(MJRefreshState)state 
 { 
     [self setImages:images duration:images.count * 0.1 forState:state]; 

@@ -20,6 +20,7 @@
 
 @implementation MJRefreshBackGifFooter
 #pragma mark - 懒加载
+//动画
 - (UIImageView *)gifView
 {
     if (!_gifView) {
@@ -28,7 +29,7 @@
     }
     return _gifView;
 }
-
+//存放动画字典
 - (NSMutableDictionary *)stateImages
 {
     if (!_stateImages) {

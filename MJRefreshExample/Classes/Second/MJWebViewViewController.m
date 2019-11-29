@@ -34,6 +34,7 @@
 }
 
 #pragma mark - webViewDelegate
+//加载完毕：结束刷新
 - (void)webViewDidFinishLoad:(nonnull UIWebView *)webView
 {
     [self.webView.scrollView.mj_header endRefreshing];

@@ -21,6 +21,7 @@ static BOOL respondsToAdjustedContentInset_;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
+        //是否有这个方法
         respondsToAdjustedContentInset_ = [self instancesRespondToSelector:@selector(adjustedContentInset)];
     });
 }
@@ -122,6 +123,7 @@ static BOOL respondsToAdjustedContentInset_;
     self.contentOffset = offset;
 }
 
+//获取当前偏移量Y
 - (CGFloat)mj_offsetY
 {
     return self.contentOffset.y;

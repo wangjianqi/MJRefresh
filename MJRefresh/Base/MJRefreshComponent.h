@@ -42,7 +42,7 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)(void);
 {
     /** 记录scrollView刚开始的inset */
     UIEdgeInsets _scrollViewOriginalInset;
-    /** 父控件 */
+    /** 父控件 */ //__weak
     __weak UIScrollView *_scrollView;
 }
 #pragma mark - 刷新回调
@@ -51,7 +51,7 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)(void);
 /** 设置回调对象和回调方法 */
 - (void)setRefreshingTarget:(id)target refreshingAction:(SEL)action;
 
-/** 回调对象 */
+/** 回调对象 */  //weak:target
 @property (weak, nonatomic) id refreshingTarget;
 /** 回调方法 */
 @property (assign, nonatomic) SEL refreshingAction;
