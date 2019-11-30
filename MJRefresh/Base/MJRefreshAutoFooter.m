@@ -117,6 +117,7 @@
             break;
             
         case UIGestureRecognizerStateBegan: {
+            //新的手势
             self.oneNewPan = YES;
         }
             break;
@@ -125,7 +126,7 @@
             break;
     }
 }
-
+//忽略刷新操作
 - (BOOL)ignoreRefreshAction {
     return !self.isOneNewPan && self.isOnlyRefreshPerDrag;
 }

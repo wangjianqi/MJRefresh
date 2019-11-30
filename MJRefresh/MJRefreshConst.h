@@ -61,7 +61,7 @@ UIKIT_EXTERN NSString *const MJRefreshHeaderLastTimeText;
 UIKIT_EXTERN NSString *const MJRefreshHeaderDateTodayText;
 UIKIT_EXTERN NSString *const MJRefreshHeaderNoneLastDateText;
 
-// 状态检查
+// 状态检查：获取之前状态
 #define MJRefreshCheckState \
 MJRefreshState oldState = self.state; \
 if (state == oldState) return; \

@@ -75,19 +75,20 @@
         if (!self.lastUpdatedTimeLabel.hidden) {
             timeWidth = self.lastUpdatedTimeLabel.mj_textWidth;
         }
+        //获取较大宽度
         CGFloat textWidth = MAX(stateWidth, timeWidth);
         arrowCenterX -= textWidth / 2 + self.labelLeftInset;
     }
     CGFloat arrowCenterY = self.mj_h * 0.5;
     CGPoint arrowCenter = CGPointMake(arrowCenterX, arrowCenterY);
     
-    // 箭头
+    // 箭头: 没有约束
     if (self.arrowView.constraints.count == 0) {
         self.arrowView.mj_size = self.arrowView.image.size;
         self.arrowView.center = arrowCenter;
     }
         
-    // 圈圈
+    // 圈圈: 与箭头位置相同
     if (self.loadingView.constraints.count == 0) {
         self.loadingView.center = arrowCenter;
     }
@@ -101,6 +102,7 @@
     
     // 根据状态做事情
     if (state == MJRefreshStateIdle) {
+        //正在
         if (oldState == MJRefreshStateRefreshing) {
             self.arrowView.transform = CGAffineTransformIdentity;
             
